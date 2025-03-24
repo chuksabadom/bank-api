@@ -14,7 +14,7 @@ import java.util.*
 
 @Tag(name = "Customer", description = "API for getting customer info")
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping("/api/v1/customers")
 class CustomerController(
     private val customerService: CustomerService,
     private val customerRepository: CustomerRepository

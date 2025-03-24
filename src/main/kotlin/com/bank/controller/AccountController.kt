@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @Tag(name = "Accounts", description = "API for managing accounts")
 @RestController
-@RequestMapping("/api/accounts")
+@RequestMapping("/api/v1/accounts")
 class AccountController(
       private val accountService: AccountService
 ){
