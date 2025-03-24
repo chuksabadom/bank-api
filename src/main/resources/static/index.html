@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <h2>Create Account</h2>
+  <input type="text" id="customerId" placeholder="Customer ID">
+  <input type="number" id="initialCredit" placeholder="Initial Credit">
+  <button onclick="createAccount()">Create Account</button>
+
+  <h2>Get Customer Info</h2>
+  <input type="text" id="getCustomerId" placeholder="Customer ID">
+  <button onclick="getCustomer()">Get Info</button>
+  <pre id="output"></pre>
+
+  <script>
+        async function createAccount() {
+          const response = await fetch('/api/accounts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              customerId: document.getElementById('customerId').value,
+              initialCredit: document.getElementById('initialCredit').value
+            })
+          });
+          alert('Account created: ' + (await response.json()).id);
+        }
+
+        async function getCustomer() {
+          const customerId = document.getElementById('getCustomerId').value;
+          const response = await fetch(`/api/customers/${customerId}`);
+          document.getElementById('output').innerHTML = JSON.stringify(await response.json(), null, 2);
+       }
+  </script>
+</body>
+</html>

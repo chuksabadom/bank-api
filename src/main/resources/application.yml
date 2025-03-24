@@ -1,0 +1,25 @@
+spring:
+  h2:
+    console:
+      enabled: true  # Enable H2 console
+      path: /h2-console  # Default pat
+  datasource:
+    url: jdbc:h2:mem:bankdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop  # Use "create-drop" for testing if you want a fresh DB every run
+    defer-datasource-initialization: true  # Defer datasource initialization until after the schema is created
+    show-sql: true  # Enable SQL logging
+  sql:
+    init:
+      mode: always  # Ensure data.sql runs after tables are created
+      platform: h2  # Optional: to specify the H2 platform
+
+logging:
+  level:
+    org.springframework.jdbc.core: DEBUG
+    org.springframework.sql.init: DEBUG
