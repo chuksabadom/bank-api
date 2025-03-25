@@ -35,5 +35,5 @@ To access H2 console during development: `http://localhost:8080/h2-console`
 Use JDBC URL: `jdbc:h2:mem:bankdb`
 
 7. **Access the Swagger UI**:
-- With the application running, visit: http://localhost:8080/swagger-ui/index.html
-- You can also check the raw API docs at: http://localhost:8080/v3/api-docs
+- With the application running, visit: `http://localhost:8080/swagger-ui/index.html`
+- You can also check the raw API docs at: `http://localhost:8080/v3/api-docs`
